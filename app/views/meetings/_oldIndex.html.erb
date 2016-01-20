@@ -1,0 +1,35 @@
+<%- model_class = Meeting -%>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:descripton) %></th>
+      <th><%= model_class.human_attribute_name(:channel) %></th>
+      <th><%= model_class.human_attribute_name(:place) %></th>
+      <th><%= model_class.human_attribute_name(:start_time) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @meetings.each do |meeting| %>
+      <tr>
+        <!-- <td><%#= link_to meeting.id, meeting_path(meeting) %></td> -->
+        <td><%= meeting.name %></td>
+        <td><%= meeting.descripton %></td>
+        <td><%= meeting.channel %></td>
+        <td><%= meeting.place %></td>
+        <td><%= meeting.start_time %></td>
+        <!-- <td><%#=l meeting.created_at %></td> -->
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_meeting_path(meeting), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      meeting_path(meeting),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

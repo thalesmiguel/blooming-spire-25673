@@ -1,0 +1,50 @@
+<div class="simple-calendar">
+  
+  <div>
+    <%= link_to "<span class='btn glyphicon glyphicon-arrow-left' </span>".html_safe , start_date: date_range.first - 1.day %>
+    
+    <b class="btn mes-ano"> <%= I18n.t("date.month_names")[start_date.month] %>/<%= start_date.year %> </b>
+    
+    <%= link_to "<span class='btn glyphicon glyphicon-arrow-right' aria-hidden='true'></span>".html_safe, start_date: date_range.last + 1.day  %>
+
+    <div class="color-swatches"> 
+      <div class="color-swatch brand-Agro_Canal"> Agro Canal </div> 
+      <div class="color-swatch brand-Canal_do_Boi"> Canal do Boi </div> 
+      <div class="color-swatch brand-Canal_Rural"> Canal Rural </div> <br>
+      <div class="color-swatch brand-Novo_Canal"> Novo Canal </div> 
+      <div class="color-swatch brand-Terra_Viva"> Terra Viva </div> 
+      <div class="color-swatch brand-Sem_Transmissao"> S/ Transmissão </div> 
+    </div>
+
+  </div>
+
+  <br><br>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <% date_range.slice(0, 7).each do |day| %>
+          <th><%= I18n.t("date.abbr_day_names")[day.wday] %></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% date_range.each_slice(7) do |week| %>
+        <tr>
+          <% week.each do |day| %>
+            <%= content_tag :td, class: calendar.td_classes_for(day), style:"padding-top: 0px; padding-right: 0px; padding-left: 0px; font-weight: bold;padding-bottom: 0px;" do %>
+              <% if defined?(Haml) && block_is_haml?(block) %>
+                <% capture_haml do %>
+                  <% block.call day, sorted_events.fetch(day, []) %>
+                <% end %>
+              <% else %>
+                <% block.call day, sorted_events.fetch(day, []) %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

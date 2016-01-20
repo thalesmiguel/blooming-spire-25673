@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      meeting:
+        one: "Agenda"
+        other: "Agendas"
+    attributes:
+      meeting: 
+        # activerecord.attributes.<model>.<field>
+        name: "Nome"
+        descripton: "Descrição"
+        channel: "Canal"
+        place: "Local"
+        start_time: "Data/Hora"
