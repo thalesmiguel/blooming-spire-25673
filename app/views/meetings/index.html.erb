@@ -9,9 +9,9 @@
     <div>
       <!-- <p class="bg-primary"> <%= link_to meeting.name, meeting_path(meeting) %> </p> -->
 
-      <nav class="navbar navbar-default" style='margin-bottom: 0px;margin-top: 0px;padding-top: 13px; background-color: <%= meeting.channel.color %>;'>
+      <nav class="navbar navbar-default" style='margin-bottom: 0px;margin-top: 0px;padding-top: 10px; background-color: <%= meeting.channel.color %>;'>
         <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
-          <ul style="text-align: center;padding-left: 0px; font-size: 14px">
+          <ul style="text-align: center;padding-left: 0px; font-size: 12px">
             <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") , meeting_path(meeting), {:style=> "color: #{meeting.channel.font} ;"}%>
           </ul>
         </div>

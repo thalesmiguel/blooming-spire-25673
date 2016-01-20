@@ -45,11 +45,15 @@
         </button>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li> <%= link_to "<span class='glyphicon glyphicon-calendar' </span>".html_safe, {controller: "meetings", action: "index"}, :style => 'padding-bottom: 0px; padding-left: 0px;' %> </li>
+
+            <li> <%= link_to "<span class='glyphicon glyphicon-calendar' </span>".html_safe, {controller: "meetings", action: "index"}, :style => 'padding-bottom: 0px; padding-left: 0px; padding-top: 10px;' %> </li>
   
-            <li> <%= link_to t('.new', :default => "Novo Leilão"), new_meeting_path, :class => 'btn btn-primary' %> </li>
+            <%= link_to t('.new', :default => "Novo Leilão"), new_meeting_path, :class => 'btn btn-primary' %>
            
-            <li> <input type="button" id="btnSave" value="Imprimir" style="clear: both;padding-top: 15px;padding-bottom: 15px;border-left-width: 0px;border-right-width: 0px;" class="btn btn-danger" /> </li>
+            
+            <% if current_page?(controller: 'meetings', action: 'index') || current_page?(root_url) %>
+              <input type="button" id="btnSave" value="Imprimir" class="btn btn-danger" /> 
+            <% end %>
 
           </ul>
         </div>
