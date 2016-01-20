@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <% if current_page?(controller: 'meetings', action: 'index') %>
+    <% if current_page?(controller: 'meetings', action: 'index') || current_page?(root_url) %>
       <div class="container2" style="padding-left: 40px; padding-right: 40px;">
     <% else %>
       <div class="container">
