@@ -13,9 +13,17 @@
         <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
           <ul style="text-align: center;padding-left: 0px; font-size: 12px">
             <% if current_user.admin == 0 %>
-              <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M"), :style => "color: #{meeting.font};"%>
+              <% if meeting.start_time.strftime("%H:%M") == '00:00' %>
+                <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
+              <% else %>
+                <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M"), :style => "color: #{meeting.font};"%>
+              <% end %>
             <% else %>
-              <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+              <% if meeting.start_time.strftime("%H:%M") == '00:00' %>
+                <%= link_to meeting.name, meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+              <% else %>
+                <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+              <% end %>
             <% end %>
           </ul>
         </div>
