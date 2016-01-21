@@ -50,7 +50,7 @@
   }
 
   .wday-0 {
-    background-color: #FFEEF5;
+    background-color: #FFF6F7;
   }
   .wday-0 p {
     background-color: #D32F2F;
@@ -67,6 +67,7 @@
   }
 
   .past {}
+
   .future {}
 
   .start-date {}
@@ -77,6 +78,16 @@
   .next-month {
     background: #DDD;
   }
+
+  .prev-month p {
+    background-color: #B6B6B6;
+  }
+
+  .next-month p {
+    background-color: #B6B6B6;
+  }
+
+
   .current-month {}
 
   .has-events {
@@ -85,7 +96,7 @@
   .has-events p {
     background-color: #f0ad4e;
   }
-}
+
 
   .color-swatches{
     float: right;
@@ -150,6 +161,8 @@
     border-radius: 1px;
     font-weight: bold;
     text-align: center;
+}
+
 }
 
  

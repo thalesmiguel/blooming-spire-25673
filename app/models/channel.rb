@@ -1,3 +1,4 @@
 class Channel < ActiveRecord::Base
-	  has_many :meetings, :dependent => :destroy
+	#establish_connection "agenda_#{RAILS_ENV}"
+	has_many :meetings, :dependent => :destroy
 end
