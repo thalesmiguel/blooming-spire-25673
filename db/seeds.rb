@@ -25,3 +25,5 @@ Holiday.create(:name => 'Nossa Senhora Aparecida', :date => '2016-10-12', :color
 Holiday.create(:name => 'Finados', :date => '2016-11-02', :color => '#9C27B0', :font => '#FFFFFF')
 Holiday.create(:name => 'Proclamação da República', :date => '2016-11-15', :color => '#9C27B0', :font => '#FFFFFF')
 Holiday.create(:name => 'Natal', :date => '2016-12-25', :color => '#9C27B0', :font => '#FFFFFF')
+
+User.create(username: 'admin', email: '', password: 'agenda123', password_confirmation: 'agenda123', :admin => 1)
