@@ -2,17 +2,17 @@
 
 <%#= render :partial => 'oldIndex' %>
 
-<%= month_calendar events: @meetings do |date, meetings| %>
+<%= month_calendar events: (@meetings + @holidays) do |date, events| %>
   <p class="bg-primary" style="padding-left: 8px;margin-bottom: 0px;"> <%= date.day %> </p>
 
-  <% meetings.each do |meeting| %>
+  <% events.each do |meeting| %>
     <div>
       <!-- <p class="bg-primary"> <%= link_to meeting.name, meeting_path(meeting) %> </p> -->
 
-      <nav class="navbar navbar-default" style='margin-bottom: 0px;margin-top: 0px;padding-top: 10px; background-color: <%= meeting.channel.color %>;'>
+      <nav class="navbar navbar-default" style='margin-bottom: 0px;margin-top: 0px;padding-top: 10px; background-color: <%= meeting.color %>;'>
         <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
           <ul style="text-align: center;padding-left: 0px; font-size: 12px">
-            <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") , meeting_path(meeting), {:style=> "color: #{meeting.channel.font} ;"}%>
+            <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
           </ul>
         </div>
       </nav>

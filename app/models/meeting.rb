@@ -13,5 +13,12 @@ class Meeting < ActiveRecord::Base
   	  self.name.upcase!.gsub!('ã', 'Ã').gsub!('õ', 'Õ')
 	end
 
+	def color
+	  color = self.channel.color
+	end
+
+	def font
+	  font = self.channel.font
+	end
 end
 	

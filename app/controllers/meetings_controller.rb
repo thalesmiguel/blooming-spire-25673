@@ -4,6 +4,7 @@ class MeetingsController < ApplicationController
   # GET /meetings
   # GET /meetings.json
   def index
+    @holidays = Holiday.all
     @meetings = Meeting.all
   end
 

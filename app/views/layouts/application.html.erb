@@ -88,10 +88,14 @@
 
   $(function () {
     $("#btnSave").click(function () {
+      document.getElementById("SetaDir").style.visibility = "hidden"
+      document.getElementById("SetaEsq").style.visibility = "hidden"
       html2canvas($("#widget"), {
         onrendered: function (canvas) {
           var img = canvas.toDataURL()
           window.open(img);
+          document.getElementById("SetaDir").style.visibility = "visible"
+          document.getElementById("SetaEsq").style.visibility = "visible"
         },
         allowTaint: true
        });
