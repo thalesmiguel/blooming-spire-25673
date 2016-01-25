@@ -16,13 +16,13 @@
               <% if meeting.start_time.strftime("%H:%M") == '00:00' %>
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
               <% else %>
-                <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M"), :style => "color: #{meeting.font};"%>
+                <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.place + ")", :style => "color: #{meeting.font};"%>
               <% end %>
             <% else %>
               <% if meeting.start_time.strftime("%H:%M") == '00:00' %>
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
               <% else %>
-                <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.place + ")" , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
               <% end %>
             <% end %>
           </ul>

@@ -6,6 +6,11 @@ class MeetingsController < ApplicationController
   def index
     @holidays = Holiday.all
     @meetings = Meeting.all
+    @meetings.each do |meeting|
+      # meeting.name.gsub!('LEILÃO VIRTUAL', '')
+      # meeting.name.gsub!('LEILÃO', '')
+      meeting.name.gsub!('VIRTUAL', '')
+    end
   end
 
   # GET /meetings/1

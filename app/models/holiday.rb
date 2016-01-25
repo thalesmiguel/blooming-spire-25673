@@ -7,5 +7,8 @@ class Holiday < ActiveRecord::Base
     def channel
     end
 
+    def place
+    	
+    end
 
 end
