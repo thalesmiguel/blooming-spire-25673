@@ -3,7 +3,7 @@ class CreateMeetings < ActiveRecord::Migration
     create_table :meetings do |t|
       t.belongs_to :channel, index: true
       t.string :name
-      t.string :descripton
+      t.string :description
       t.string :place
       t.datetime :start_time
 

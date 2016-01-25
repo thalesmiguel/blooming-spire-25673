@@ -10,7 +10,7 @@ class Meeting < ActiveRecord::Base
 
 
 	def make_uppercase
-  	  self.name.upcase!.gsub!('ã', 'Ã').gsub!('õ', 'Õ')
+  	  self.name.to_s.upcase! #.gsub!('ã', 'Ã').gsub!('õ', 'Õ')
 	end
 
 	def color

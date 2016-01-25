@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 20160121132552) do
   create_table "meetings", force: :cascade do |t|
     t.integer  "channel_id"
     t.string   "name"
-    t.string   "descripton"
+    t.string   "description"
     t.string   "place"
     t.datetime "start_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "meetings", ["channel_id"], name: "index_meetings_on_channel_id", using: :btree
