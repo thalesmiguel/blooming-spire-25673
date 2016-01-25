@@ -1,0 +1,413 @@
+@charset "UTF-8";
+
+@media print {
+  * {
+    text-shadow: none !important;
+    /*color: #000 !important;*/
+    /*background: transparent !important;*/
+    box-shadow: none !important;
+  }
+
+  div.simple-calendar .color-swatches {
+/*    background-color: #337ab7;
+    color: #FFFFFF;
+    width: 130px;
+    height: 20px;
+    float: left;
+    border-radius: 1px;
+    font-weight: bold;
+    text-align: center;*/
+  }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #ffffff;
+  }
+
+  div.paginar { 
+   /*page-break-after: always; */
+   /*page-break-inside: avoid;*/
+  }
+
+  .visible-print {
+    display: block !important;
+  }
+
+  .hidden-print {
+    display: none !important;
+  }
+
+  td, th {
+  padding: 0px;
+  }
+  
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  select {
+    background: #fff !important;
+  }
+ 
+  .table td,
+  .table th {
+    /*background-color: #fff !important;*/
+  }
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .label {
+    border: 1px solid #000;
+  }
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+
+
+}
+
+
+/* line 2, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar table {
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  background-color: transparent;
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+/* line 13, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar tr {
+  border-collapse: collapse;
+}
+/* line 17, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar th {
+  padding: 6px;
+  border-bottom: 2px solid #dddddd;
+  border-collapse: collapse;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-top: 0px none #333333;
+  box-sizing: border-box;
+  text-align: left;
+}
+/* line 28, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar td {
+  padding: 6px;
+  vertical-align: top;
+  width: 14%;
+  border: 1px solid #ddd;
+  border-top-color: #dddddd;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-color: #dddddd;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: #dddddd;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #dddddd;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+/* line 48, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .day {
+  height: 95px;
+}
+.simple-calendar .day p {
+  color: #fff;
+  background-color: #428bca;
+}
+
+/* line 52, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .wday-0 {
+  background-color: #FFF6F7;
+}
+/* line 55, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .wday-0 p {
+  background-color: #D32F2F;
+}
+/* line 65, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .today {
+  background: #FFFFC0;
+}
+/* line 75, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .prev-month {
+  background: #DDD; 
+}
+/* line 78, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .next-month {
+  background: #DDD;
+}
+/* line 82, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .prev-month p {
+  background-color: #B6B6B6;
+}
+/* line 86, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .next-month p {
+  background-color: #B6B6B6;
+}
+/* line 96, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .has-events p {
+  background-color: #f0ad4e;
+}
+/* line 101, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .color-swatches {
+  float: right;
+}
+/* line 105, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .color-swatches .brand-Agro_Canal {
+  background-color: #337ab7;
+  color: #FFFFFF;
+  width: 130px;
+  height: 30px;
+  float: left;
+  border-radius: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 115, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .color-swatches .brand-Canal_do_Boi {
+  background-color: #388E3C;
+  color: #FFFFFF;
+  width: 130px;
+  height: 30px;
+  float: left;
+  border-radius: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 125, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .color-swatches .brand-Canal_Rural {
+  background-color: #795548;
+  color: #FFFFFF;
+  width: 130px;
+  height: 30px;
+  float: left;
+  border-radius: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 135, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .color-swatches .brand-Novo_Canal {
+  background-color: #E91E63;
+  color: #FFFFFF;
+  width: 130px;
+  height: 30px;
+  float: left;
+  border-radius: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 145, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .color-swatches .brand-Terra_Viva {
+  background-color: #FF9800;
+  color: #212121;
+  width: 130px;
+  height: 30px;
+  float: left;
+  border-radius: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 155, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
+.simple-calendar .color-swatches .brand-Sem_Transmissao {
+  background-color: #9E9E9E;
+  color: #212121;
+  width: 130px;
+  height: 30px;
+  float: left;
+  border-radius: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 0px 0 20px;
+    border-bottom: 1px solid #eeeeee;}
+
+a.btn.btn-primary {
+  color: #fff;
+  font-weight: bold;
+}
+
+li > a.btn.btn-primary:hover {
+  font-weight: bold;
+  color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+li > .btn.btn-danger {
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  margin-bottom: 0px;margin-top: 0px;padding-top: 0px;
+}
+
+b.mes-ano {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-weight: bold;
+    font-size: 25px;
+    line-height: 18px;
+}
+
+span.glyphicon-arrow-left {
+    font-size: 1.5em;
+}
+
+span.glyphicon-arrow-right {
+    font-size: 1.5em;
+}
+
+span.glyphicon-calendar{
+    font-size: 1.5em;
+    color: grey;
+    text-align: center;
+}
+
+span.glyphicon-print{
+    font-size: 1.5em;
+    color: grey;
+    text-align: center;
+}
+
+span:hover{
+  color: #666;
+  background-color: white;
+  text-decoration: none;
+}
+
+.navbar {
+    min-height: 35px;
+} 
+
+.simple-calendar .color-swatches .brand-Agro_Canal {
+    background-color: #337ab7;
+    color: #FFFFFF;
+    width: 100px;
+    height: 20px;
+    float: left;
+    border-radius: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+.simple-calendar .color-swatches .brand-Canal_do_Boi {
+    background-color: #388E3C;
+    color: #FFFFFF;
+    width: 100px;
+    height: 20px;
+    float: left;
+    border-radius: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+.simple-calendar .color-swatches .brand-Canal_Rural {
+    background-color: #795548;
+    color: #FFFFFF;
+    width: 100px;
+    height: 20px;
+    float: left;
+    border-radius: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+.simple-calendar .color-swatches .brand-Novo_Canal {
+    background-color: #E91E63;
+    color: #FFFFFF;
+    width: 100px;
+    height: 20px;
+    float: left;
+    border-radius: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+.simple-calendar .color-swatches .brand-Terra_Viva {
+    background-color: #FF9800;
+    color: #212121;
+    width: 100px;
+    height: 20px;
+    float: left;
+    border-radius: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+.simple-calendar .color-swatches .brand-Sem_Transmissao {
+    background-color: #9E9E9E;
+    color: #212121;
+    width: 100px;
+    height: 20px;
+    float: left;
+    border-radius: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+#widget > div > table > tbody > tr > td > div > nav > div{
+  padding-left: 0px;padding-right: 0px;
+}
+
+#widget > div > table > tbody > tr > td > div > nav > div > ul > label {
+  text-align: center;padding-left: 0px; font-size: 10px;
+}
+
+#widget > div > table > tbody > tr > td > div > nav > div > ul > a{
+  text-decoration: none;
+  text-align: center;padding-left: 0px; font-size: 10px;
+}
+
+#widget > div > table > tbody > tr > td > div > nav{
+  min-height: 0px; margin-bottom: 0px; margin-top: 0px; padding-top: 0px;
+}
+
+#widget > div > table > tbody > tr > td {
+  padding-top: 0px; padding-right: 0px; padding-left: 0px; font-weight: bold;padding-bottom: 0px;
+}
+
+#widget > div > table > tbody > tr > td > p {
+  padding-left: 8px;margin: 0px
+}
+
+#widget > div > table > tbody > tr > td > div > nav > div > ul > label{
+  margin-bottom: 0px;
+}
+
+#widget > div > table > tbody > tr > td > div > nav > div > ul{
+  text-align: center;padding-left: 0px; font-size: 12px;margin-bottom: 0px; margin-top: 0px;
+}

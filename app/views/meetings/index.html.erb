@@ -9,7 +9,7 @@
     <div>
       <!-- <p class="bg-primary"> <%= link_to meeting.name, meeting_path(meeting) %> </p> -->
 
-      <nav class="navbar navbar-default" style='margin-bottom: 0px;margin-top: 0px;padding-top: 10px; background-color: <%= meeting.color %>;'>
+      <nav class="navbar navbar-default" style='margin-bottom: 0px;margin-top: 0px; background-color: <%= meeting.color %>;'>
         <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
           <ul style="text-align: center;padding-left: 0px; font-size: 12px">
             <% if current_user.admin == 0 %>

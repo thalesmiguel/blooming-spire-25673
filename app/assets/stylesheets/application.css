@@ -14,6 +14,7 @@
  *= require_self
  *= simple_calendar
  *= require devise_bootstrap_views
+ *= stub print.css
  */
 
 
@@ -38,6 +39,10 @@ li > .btn.btn-danger {
     font-weight: bold;
 }
 
+#btnSave{
+    font-weight: bold;
+}
+
 .navbar-default .navbar-nav > li > a {
 	color: #fff;
 }
@@ -58,7 +63,7 @@ span.glyphicon-arrow-right {
 }
 
 span.glyphicon-calendar{
-    font-size: 1.5em;
+    font-size: 2.3em;
     color: grey;
     text-align: center;
 }
@@ -77,4 +82,8 @@ span:hover{
 
 .navbar {
     min-height: 35px;
+}
+
+#widget > div > table > tbody > tr > td > div > nav{
+  min-height: 0px; margin-bottom: 0px; margin-top: 0px; padding-top: 10px;
 }

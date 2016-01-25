@@ -8,7 +8,8 @@
 
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "application", :media => "screen" %>
+    <%= stylesheet_link_tag "print", :media => "print" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -39,14 +40,14 @@
     <![endif]-->
   </head>
   <body>
-    <div class="navbar navbar-default navbar-static-top">
+    <div class="navbar navbar-default navbar-static-top hidden-print">
       <div class="container" style="padding-left: 0px; padding-right: 0px;">
           <span class="icon-bar"></span>
         </button>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav" style="margin-top: 08px;">
 
-            <li> <%= link_to "<span class='glyphicon glyphicon-calendar' </span>".html_safe, meetings_path, :style => 'padding-bottom: 0px; padding-left: 0px; padding-top: 10px;' %> </li>
+            <li> <%= link_to "<span class='glyphicon glyphicon-calendar' </span>".html_safe, meetings_path, :style => 'padding-bottom: 0px; padding-left: 0px; padding-top: 0px;' %> </li>
   
             <% if current_user.nil? %>
               <% nil %>
@@ -82,14 +83,14 @@
       <div class="container">
     <% end %>
 
-      <div class="row">
+      <div class="row paginar">
         <div class="col-lg" id="widget">
-          <%= bootstrap_flash %>
+          <%#= bootstrap_flash %>
           <%= yield %>
         </div>
       </div><!--/row-->
       
-      <footer>
+      <footer class="hidden-print" >
         <p>&copy; Thales Miguel 2016</p>
        </footer>
 
@@ -104,17 +105,18 @@
 
   $(function () {
     $("#btnSave").click(function () {
-      document.getElementById("SetaDir").style.visibility = "hidden"
-      document.getElementById("SetaEsq").style.visibility = "hidden"
-      html2canvas($("#widget"), {
-        onrendered: function (canvas) {
-          var img = canvas.toDataURL()
-          window.open(img);
-          document.getElementById("SetaDir").style.visibility = "visible"
-          document.getElementById("SetaEsq").style.visibility = "visible"
-        },
-        allowTaint: true
-       });
+     window.print();
+      // document.getElementById("SetaDir").style.visibility = "hidden"
+      // document.getElementById("SetaEsq").style.visibility = "hidden"
+      // html2canvas($("#widget"), {
+      //   onrendered: function (canvas) {
+      //     var img = canvas.toDataURL()
+      //     window.open(img);
+      //     document.getElementById("SetaDir").style.visibility = "visible"
+      //     document.getElementById("SetaEsq").style.visibility = "visible"
+      //   },
+      //   allowTaint: true
+      //  });
       });
     });
 </script>
