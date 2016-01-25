@@ -394,6 +394,9 @@ span:hover{
 
 #widget > div > table > tbody > tr > td > div > nav{
   min-height: 0px; margin-bottom: 0px; margin-top: 0px; padding-top: 0px;
+  border-bottom: solid;
+  border-width: thin;
+  border-bottom-color: white;
 }
 
 #widget > div > table > tbody > tr > td {
@@ -410,4 +413,16 @@ span:hover{
 
 #widget > div > table > tbody > tr > td > div > nav > div > ul{
   text-align: center;padding-left: 0px; font-size: 12px;margin-bottom: 0px; margin-top: 0px;
+}
+#widget > div > table > tbody > tr > td.day.next-month.has-events > div > nav {
+  display: none;
+} 
+#widget > div > table > tbody > tr > td.day.next-month.has-events > p {
+  background-color: #B6B6B6
+}
+#widget > div > table > tbody > tr > td.day.prev-month.has-events > div > nav {
+  display: none;
+} 
+#widget > div > table > tbody > tr > td.day.prev-month.has-events > p {
+  background-color: #B6B6B6
 }
