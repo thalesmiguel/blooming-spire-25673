@@ -68,9 +68,9 @@
             Entrou como <strong><%= current_user.username %></strong>.
             <%#= link_to 'Editar conta', edit_user_registration_path, :class => 'navbar-link' %> |
             <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-          <% else %>
-            <%#= link_to "Inscrever-se", new_user_registration_path, :class => 'navbar-link'  %> |
-            <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
+          <%# else %>
+            <%#= link_to "Inscrever-se", new_user_registration_path, :class => 'navbar-link'  %> 
+            <%#= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
           <% end %>
 
        </div>
