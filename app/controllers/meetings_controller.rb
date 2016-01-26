@@ -20,7 +20,7 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/new
   def new
-    @meeting = Meeting.new
+    @meeting = Meeting.new 
   end
 
   # GET /meetings/1/edit
@@ -75,6 +75,6 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:name, :description, :channel_id, :place, :start_time)
+      params.require(:meeting).permit(:name, :description, :channel_id, :city_id, :start_time)
     end
 end

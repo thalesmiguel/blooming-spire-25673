@@ -10,8 +10,12 @@
   <dd><%= @meeting.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:channel) %>:</strong></dt>
   <dd><%= @meeting.channel.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:place) %>:</strong></dt>
-  <dd><%= @meeting.place %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:local) %>:</strong></dt>
+  <% if @meeting.city.id == 0 %>
+    <dd><%= @meeting.city.name %></dd>
+  <% else %>
+    <dd><%= @meeting.city.name + '/' + @meeting.city.state.initials %></dd>
+  <% end %>
   <dt><strong><%= model_class.human_attribute_name(:start_time) %>:</strong></dt>
   <dd><%= @meeting.start_time.strftime("%d/%m/%Y - %H:%M") %></dd>
 </dl>

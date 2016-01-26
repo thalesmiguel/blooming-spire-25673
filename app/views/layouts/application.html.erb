@@ -100,7 +100,6 @@
 </html>
 
 
-<script src="~/html2canvas-0.5.0-alpha1/dist/html2canvas.min.js"></script>
 <script>
 
   $(function () {
@@ -119,4 +118,25 @@
       //  });
       });
     });
+</script>
+
+
+<script>
+  (function() {
+  jQuery(function() {
+    var cities;
+    cities = $('#meeting_city_id').html();
+    return $('#meeting_state_id').change(function() {
+      var options, state;
+      state = $('#meeting_state_id :selected').text();
+      options = $(cities).filter("optgroup[label='" + state + "']").html();
+      if (options) {
+        return $('#meeting_city_id').html(options);
+      } else {
+        return $('#meeting_city_id').empty();
+      }
+    });
+  });
+
+}).call(this);
 </script>

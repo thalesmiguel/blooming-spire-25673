@@ -3,23 +3,30 @@ class Meeting < ActiveRecord::Base
 	before_save :make_uppercase
 
 	belongs_to :channel
+	belongs_to :city
 
 	accepts_nested_attributes_for :channel
 
-	validates_presence_of :name, :channel_id, :place, :start_time
+	validates_presence_of :name, :channel_id, :city_id, :start_time
 
 
 	def make_uppercase
-  	  self.name.to_s.upcase!.gsub!('ã', 'Ã')
-  	  self.name.to_s.upcase!.gsub!('õ', 'Õ')
+	  if !self.nil?
+  	    self.name.to_s.upcase.gsub('ã', 'Ã')
+  	    self.name.to_s.upcase.gsub('õ', 'Õ')
+  	  end
 	end
 
 	def color
-	  color = self.channel.color
+	  self.channel.color
 	end
 
 	def font
-	  font = self.channel.font
+	  self.channel.font
+	end
+
+	def state_id
+	  self.city.state_id unless self.new_record?
 	end
 end
 	
