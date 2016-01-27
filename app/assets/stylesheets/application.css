@@ -79,10 +79,10 @@ span.glyphicon-print{
 }
 
 span:hover{
-	color: #666;
+/*	color: #666;
 	background-color: white;
 	text-decoration: none;
-}
+*/}
 
 .navbar {
     min-height: 35px;

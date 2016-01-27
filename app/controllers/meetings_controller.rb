@@ -22,6 +22,7 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/new
   def new
+    @new = 1
     @meeting = Meeting.new 
   end
 
@@ -36,7 +37,7 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       if @meeting.save
-        format.html { redirect_to meetings_url }
+        format.html { redirect_to session[:start_date] }
         format.json { render :show, status: :created, location: @meeting }
       else
         format.html { render :new }
@@ -64,7 +65,7 @@ class MeetingsController < ApplicationController
   def destroy
     @meeting.destroy
     respond_to do |format|
-      format.html { redirect_to meetings_url, notice: 'Leilão deletado com sucesso.' }
+      format.html { redirect_to session[:start_date], notice: 'Leilão deletado com sucesso.' }
       format.json { head :no_content }
     end
   end

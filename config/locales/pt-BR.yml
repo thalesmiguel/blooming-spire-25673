@@ -226,7 +226,7 @@ pt-BR:
     links:
       back: "Voltar"
       cancel: "Cancelar"
-      confirm: "Tem certeza?"
+      confirm: "Tem certeza que deseja excluir?"
       destroy: "Deletar"
       new: "Novo"
       edit: "Editar"
