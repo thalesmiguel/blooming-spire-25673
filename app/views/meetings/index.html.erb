@@ -9,30 +9,35 @@
     <div>
       <!-- <p class="bg-primary"> <%= link_to meeting.name, meeting_path(meeting) %> </p> -->
 
-      <nav class="navbar navbar-default" style='margin-bottom: 0px;margin-top: 0px; background-color: <%= meeting.color %>;'>
+      <nav class="navbar navbar-default <%= if meeting.approved == 1
+                                              'approved' 
+                                            end %>" 
+        style='margin-bottom: 0px;margin-top: 0px; background-color: <%= meeting.color %>;'>
         <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
           <ul style="text-align: center;padding-left: 0px; font-size: 12px">
-            <% if current_user.admin == 0 %>
-              <% if meeting.start_time.strftime("%H:%M") == '00:00' %>
+            
+            <% if current_user.admin == 0 %> <!-- Usuário comum -->
+              <% if meeting.start_time.strftime("%H:%M") == '00:00' %> <!-- Feriado -->
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
               <% else %>
-                <% if meeting.city.id == 0 %>
+                <% if meeting.city.id == 0 %> <!-- Virtual -->
                   <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + ")", :style => "color: #{meeting.font};"%>
-                <% else %>
+                <% else %> <!-- Físico -->
                   <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")", :style => "color: #{meeting.font};"%>
                 <% end %>
               <% end %>
-            <% else %>
-              <% if meeting.start_time.strftime("%H:%M") == '00:00' %>
+            <% else %> <!-- Administrador -->
+              <% if meeting.start_time.strftime("%H:%M") == '00:00' %> <!-- Feriado -->
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
               <% else %>
-                <% if meeting.city.id == 0 %>
-                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + ")" , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
-                <% else %>
-                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")" , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <% if meeting.city.id == 0 %> <!-- Virtual -->
+                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + ")" , edit_meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <% else %> <!-- Físico -->
+                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")" , edit_meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
                 <% end %>
               <% end %>
             <% end %>
+
           </ul>
         </div>
       </nav>

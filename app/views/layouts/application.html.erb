@@ -86,6 +86,7 @@
       <div class="row paginar">
         <div class="col-lg" id="widget">
           <%#= bootstrap_flash %>
+          <%#= request.query_parameters['start_date'] %>
           <%= yield %>
         </div>
       </div><!--/row-->

@@ -18,10 +18,18 @@
   <% end %>
   <dt><strong><%= model_class.human_attribute_name(:start_time) %>:</strong></dt>
   <dd><%= @meeting.start_time.strftime("%d/%m/%Y - %H:%M") %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:aprovado?) %>:</strong></dt>
+  <dd><%= if @meeting.approved == 0 
+            "Não"
+          else
+            "Sim"
+          end %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              meetings_path, :class => 'btn btn-default'  %>
+<%= link_to 'Voltar', url_for(session[:start_date]), :class => 'btn btn-default' %>
+<%#= link_to t('.back', :default => t("helpers.links.back")),
+              @back_url, :class => 'btn btn-default'  %>
+              <%#= link_to "Back", @back_url %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_meeting_path(@meeting), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

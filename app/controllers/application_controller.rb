@@ -10,5 +10,5 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = :"pt-BR"
   end
-
+      
 end

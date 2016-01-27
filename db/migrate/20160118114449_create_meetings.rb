@@ -5,6 +5,7 @@ class CreateMeetings < ActiveRecord::Migration
       t.belongs_to :city, index: true
       t.string :name
       t.string :description
+      t.integer :approved, default: 0
       t.datetime :start_time
 
       t.timestamps null: false

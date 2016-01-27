@@ -47,9 +47,10 @@ ActiveRecord::Schema.define(version: 20160125192551) do
     t.integer  "city_id"
     t.string   "name"
     t.string   "description"
+    t.integer  "approved",    default: 0
     t.datetime "start_time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "meetings", ["channel_id"], name: "index_meetings_on_channel_id", using: :btree

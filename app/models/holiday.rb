@@ -8,7 +8,9 @@ class Holiday < ActiveRecord::Base
     end
 
     def place
-    	
     end
 
+    def approved
+    	0
+    end
 end

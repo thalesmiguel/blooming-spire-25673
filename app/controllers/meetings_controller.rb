@@ -1,16 +1,18 @@
 class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
 
+
   # GET /meetings
   # GET /meetings.json
   def index
     @holidays = Holiday.all
     @meetings = Meeting.all
-    @meetings.each do |meeting|
+    session[:start_date] = request.url 
+    #@meetings.each do |meeting|
       # meeting.name.gsub!('LEILÃO VIRTUAL', '')
       # meeting.name.gsub!('LEILÃO', '')
-      meeting.name.gsub!('VIRTUAL', '')
-    end
+      # meeting.name.gsub!('VIRTUAL', '')
+    # end
   end
 
   # GET /meetings/1
@@ -48,8 +50,8 @@ class MeetingsController < ApplicationController
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
-        format.html { redirect_to @meeting, notice: 'Leilão alterado com sucesso.' }
-        format.json { render :show, status: :ok, location: @meeting }
+        format.html { redirect_to session[:start_date], notice: 'Leilão alterado com sucesso.' }
+        format.json { render :show, status: :ok, location: meetings_url }
       else
         format.html { render :edit }
         format.json { render json: @meeting.errors, status: :unprocessable_entity }
@@ -75,6 +77,6 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:name, :description, :channel_id, :city_id, :start_time)
+      params.require(:meeting).permit(:name, :description, :channel_id, :city_id, :approved, :start_time)
     end
 end
