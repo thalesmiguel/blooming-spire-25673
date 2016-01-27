@@ -26,6 +26,11 @@
     color: #333333;
     background-color: #ffffff;
   }
+  
+  body > div.container2c{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 
   div.paginar { 
    /*page-break-after: always; */
