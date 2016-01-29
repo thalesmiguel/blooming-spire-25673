@@ -26,7 +26,7 @@
                   <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")", :style => "color: #{meeting.font};"%>
                 <% end %>
               <% end %>
-            <% else %> <!-- Administrador -->
+            <% elsif current_user.admin == 1 %> <!-- Administrador -->
               <% if meeting.start_time.strftime("%H:%M") == '00:00' %> <!-- Feriado -->
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
               <% else %>
@@ -36,8 +36,17 @@
                   <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")" , edit_meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
                 <% end %>
               <% end %>
+            <% elsif current_user.admin == 2 %> <!-- CPD -->
+              <% if meeting.start_time.strftime("%H:%M") == '00:00' %> <!-- Feriado -->
+                <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
+              <% else %>
+                <% if meeting.city.id == 0 %> <!-- Virtual -->
+                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + ")" , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <% else %> <!-- Físico -->
+                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")" , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <% end %>
+              <% end %>
             <% end %>
-
           </ul>
         </div>
       </nav>

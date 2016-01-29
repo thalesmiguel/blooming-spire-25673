@@ -165,7 +165,7 @@
 }
 /* line 65, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
 .simple-calendar .today {
-  background: #FFFFC0;
+  /*background: #FFFFC0;*/
 }
 /* line 75, /home/thales/Área de Trabalho/agenda/app/assets/stylesheets/meetings.scss */
 .simple-calendar .prev-month {

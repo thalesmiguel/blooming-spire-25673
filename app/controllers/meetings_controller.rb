@@ -18,12 +18,16 @@ class MeetingsController < ApplicationController
   # GET /meetings/1
   # GET /meetings/1.json
   def show
+    @CentralEvento = CentralEventos.where(:eveNome => @meeting.name, :eveDataHora => @meeting.start_time).first  #CentralEventos.where(:eveNome => @meeting.name).first
+    if @CentralEvento.nil?
+      @CentralEvento = CentralEventos.new
+    end
   end
 
   # GET /meetings/new
   def new
-    @new = 1
-    @meeting = Meeting.new 
+    @new = 1 #identificação de novo cadastro
+    @meeting = Meeting.new
   end
 
   # GET /meetings/1/edit
@@ -68,6 +72,24 @@ class MeetingsController < ApplicationController
       format.html { redirect_to session[:start_date], notice: 'Leilão deletado com sucesso.' }
       format.json { head :no_content }
     end
+  end
+
+  def newCentralEventos
+    meeting = Meeting.find(params[:id])
+
+    if meeting.city_id == 0
+      meeting.city_id = 4680 #Araçatuba
+      meeting.city.name = 'Virtual'
+    end
+
+    evento = CentralEventos.new
+    evento.eveNome = meeting.description
+    evento.eveDataHora = meeting.start_time
+    evento.eveLocal = meeting.city.name
+    evento.cidCodigo = meeting.city_id
+    evento.save
+
+    redirect_to meeting_path(params[:id])
   end
 
   private

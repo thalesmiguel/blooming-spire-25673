@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   
   root 'meetings#index'
 
+  match 'meetings/:id/newCentralEventos' => 'meetings#newCentralEventos', as: :newCentralEventos, via: [:get, :post]
+
 end

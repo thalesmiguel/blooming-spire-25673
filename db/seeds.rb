@@ -5579,6 +5579,13 @@ User.create(username: 'admin', email: '', password: 'agenda123', password_confir
 User.create(username: 'secretaria@centralleiloes.com.br', email: '', password: '100senha', password_confirmation: '100senha', :admin => 1)
 User.create(username: 'auditoria@centralleiloes.com.br', email: '', password: 'todos', password_confirmation: 'todos', :admin => 1)
 
+# Usuários - CPD
+User.create(username: 'cpd1@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 2)
+User.create(username: 'cpd2@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 2)
+User.create(username: 'cpd3@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 2)
+User.create(username: 'cpd4@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 2)
+User.create(username: 'lucas@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 2)
+
 # Usuários - Padrão
 User.create(username: 'adm.secretaria@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'adriana@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
@@ -5587,10 +5594,6 @@ User.create(username: 'atendimento1@centralleiloes.com.br', email: '', password:
 User.create(username: 'atendimento2@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'atendimento3@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'cadastros@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
-User.create(username: 'cpd1@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
-User.create(username: 'User.create(username: cpd2@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
-User.create(username: 'cpd3@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
-User.create(username: 'cpd4@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'fabio@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'financeiro@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'financeiro2@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
@@ -5606,7 +5609,6 @@ User.create(username: 'leiloes2@centralleiloes.com.br', email: '', password: 'ag
 User.create(username: 'leiloes4@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'leiloes5@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'lourenco@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
-User.create(username: 'lucas@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'lucianafernandes@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'pedro@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'ricardo@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)

@@ -83,13 +83,3 @@ production:
   database: agenda_production
   username: agenda
   password: <%= ENV['AGENDA_DATABASE_PASSWORD'] %>
-
-central_site:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: central_site
-  username: central_pontual
-  password: ricardopontual
-  host: centralleiloes.com.br
-  port: 3306
