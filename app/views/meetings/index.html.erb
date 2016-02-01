@@ -17,7 +17,7 @@
           <ul style="text-align: center;padding-left: 0px; font-size: 12px">
             
             <% if current_user.admin == 0 %> <!-- Usuário comum -->
-              <% if meeting.start_time.strftime("%H:%M") == '00:00' %> <!-- Feriado -->
+              <% if !meeting.city %> <!-- Feriado -->
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
               <% else %>
                 <% if meeting.city.id == 0 %> <!-- Virtual -->
@@ -27,7 +27,7 @@
                 <% end %>
               <% end %>
             <% elsif current_user.admin == 1 %> <!-- Administrador -->
-              <% if meeting.start_time.strftime("%H:%M") == '00:00' %> <!-- Feriado -->
+              <% if !meeting.city %> <!-- Feriado -->
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
               <% else %>
                 <% if meeting.city.id == 0 %> <!-- Virtual -->
@@ -37,7 +37,7 @@
                 <% end %>
               <% end %>
             <% elsif current_user.admin == 2 %> <!-- CPD -->
-              <% if meeting.start_time.strftime("%H:%M") == '00:00' %> <!-- Feriado -->
+              <% if !meeting.city %> <!-- Feriado -->
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
               <% else %>
                 <% if meeting.city.id == 0 %> <!-- Virtual -->

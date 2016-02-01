@@ -13,4 +13,7 @@ class Holiday < ActiveRecord::Base
     def approved
     	0
     end
+    def city
+        
+    end
 end
