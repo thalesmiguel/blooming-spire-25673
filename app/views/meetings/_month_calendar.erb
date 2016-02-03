@@ -1,0 +1,52 @@
+<%= month_calendar events: (@meetings + @holidays) do |date, events| %>
+  <p class="bg-primary" style="padding-left: 8px;margin-bottom: 0px;"> <%= date.day %> </p>
+
+  <% events.each do |meeting| %>
+    <div>
+      <!-- <p class="bg-primary"> <%= link_to meeting.name, meeting_path(meeting) %> </p> -->
+
+      <nav class="navbar navbar-default <%= if meeting.approved == 1
+                                              'approved' 
+                                            end %>" 
+        style='margin-bottom: 0px;margin-top: 0px; background-color: <%= meeting.color %>;'>
+        <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
+          <ul style="text-align: center;padding-left: 0px; font-size: 12px">
+            
+            <% if current_user.admin == 0 %> <!-- Usuário comum -->
+              <% if !meeting.city %> <!-- Feriado -->
+                <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
+              <% else %>
+                <% if meeting.city.id == 0 %> <!-- Virtual -->
+                  <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + ")", :style => "color: #{meeting.font};"%>
+                <% else %> <!-- Físico -->
+                  <%= label_tag :nil, meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")", :style => "color: #{meeting.font};"%>
+                <% end %>
+              <% end %>
+            <% elsif current_user.admin == 1 %> <!-- Administrador -->
+              <% if !meeting.city %> <!-- Feriado -->
+                <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
+              <% else %>
+                <% if meeting.city.id == 0 %> <!-- Virtual -->
+                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + ")" , edit_meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <% else %> <!-- Físico -->
+                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")" , edit_meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <% end %>
+              <% end %>
+            <% elsif current_user.admin == 2 %> <!-- CPD -->
+              <% if !meeting.city %> <!-- Feriado -->
+                <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
+              <% else %>
+                <% if meeting.city.id == 0 %> <!-- Virtual -->
+                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + ")" , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <% else %> <!-- Físico -->
+                  <%= link_to meeting.name + " - " + meeting.start_time.strftime("%H:%M") + " (" + meeting.city.name + "/" + meeting.city.state.initials + ")" , meeting_path(meeting), {:style=> "color: #{meeting.font} ;"}%>
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+  <% end %>
+<% end %>

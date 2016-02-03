@@ -390,3 +390,6 @@ span:hover{
 #widget > div > table > tbody > tr > td.day.prev-month.has-events > p {
   background-color: #B6B6B6
 }
+.calendarbuttons{
+    float: left;
+}

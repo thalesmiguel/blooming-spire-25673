@@ -1,11 +1,15 @@
 <div class="simple-calendar">
   
   <div>
-    <%= link_to "<span class='btn glyphicon glyphicon-arrow-left' id='SetaEsq' </span>".html_safe , start_date: date_range.first - 1.day %>
     
-    <b class="btn mes-ano"> <%= I18n.t("date.month_names")[start_date.month] %>/<%= start_date.year %> </b>
+    <div class="calendarbuttons">
+      <%= link_to "<span class='btn glyphicon glyphicon-arrow-left' id='SetaEsq' </span>".html_safe , start_date: date_range.first - 1.day %>
+      
+      <b class="btn mes-ano"> <%= I18n.t("date.month_names")[start_date.month] %>/<%= start_date.year %> </b>
+      
+      <%= link_to "<span class='btn glyphicon glyphicon-arrow-right' aria-hidden='true' id='SetaDir'></span> ".html_safe, start_date: date_range.last + 1.day  %>
+    </div>
     
-    <%= link_to "<span class='btn glyphicon glyphicon-arrow-right' aria-hidden='true' id='SetaDir'></span> ".html_safe, start_date: date_range.last + 1.day  %>
 
     <div class="color-swatches"> 
       <div class="color-swatch brand-Feriado"> Feriado </div>
@@ -17,7 +21,20 @@
       <div class="color-swatch brand-Terra_Viva"> Terra Viva </div> 
       <div class="color-swatch brand-Sem_Transmissao"> S/ Trans </div> 
     </div>
-
+    <div class="months hidden-print">
+      <%= link_to "Jan", {start_date: "#{(date_range.first+10).strftime("%Y")}-01-01"}, class: 'btn btn-default' %>
+      <%= link_to "Fev", {start_date: "#{(date_range.first+10).strftime("%Y")}-02-01"}, class: 'btn btn-default' %> 
+      <%= link_to "Mar", {start_date: "#{(date_range.first+10).strftime("%Y")}-03-01"}, class: 'btn btn-default' %>
+      <%= link_to "Abr", {start_date: "#{(date_range.first+10).strftime("%Y")}-04-01"}, class: 'btn btn-default' %>
+      <%= link_to "Mai", {start_date: "#{(date_range.first+10).strftime("%Y")}-05-01"}, class: 'btn btn-default' %>
+      <%= link_to "Jun", {start_date: "#{(date_range.first+10).strftime("%Y")}-06-01"}, class: 'btn btn-default' %>
+      <%= link_to "Jul", {start_date: "#{(date_range.first+10).strftime("%Y")}-07-01"}, class: 'btn btn-default' %>
+      <%= link_to "Ago", {start_date: "#{(date_range.first+10).strftime("%Y")}-08-01"}, class: 'btn btn-default' %>
+      <%= link_to "Set", {start_date: "#{(date_range.first+10).strftime("%Y")}-09-01"}, class: 'btn btn-default' %>
+      <%= link_to "Out", {start_date: "#{(date_range.first+10).strftime("%Y")}-10-01"}, class: 'btn btn-default' %>
+      <%= link_to "Nov", {start_date: "#{(date_range.first+10).strftime("%Y")}-11-01"}, class: 'btn btn-default' %>
+      <%= link_to "Dez", {start_date: "#{(date_range.first+10).strftime("%Y")}-12-01"}, class: 'btn btn-default' %>
+    </div>
   </div>
 
   <br><br>

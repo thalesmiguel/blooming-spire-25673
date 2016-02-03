@@ -6,7 +6,7 @@ class MeetingsController < ApplicationController
   # GET /meetings.json
   def index
     @holidays = Holiday.all
-    @meetings = Meeting.all
+    @meetings = Meeting.all.order(:start_time)
     session[:start_date] = request.url 
     #@meetings.each do |meeting|
       # meeting.name.gsub!('LEILÃO VIRTUAL', '')
