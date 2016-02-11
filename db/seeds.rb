@@ -5587,6 +5587,7 @@ User.create(username: 'cpd4@centralleiloes.com.br', email: '', password: 'agenda
 User.create(username: 'lucas@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 2)
 
 # Usuários - Padrão
+User.create(username: 'lourenco@centralleiloes.com.br', email: '', password: 'lomicampo', password_confirmation: 'lomicampo', :admin => 0)
 User.create(username: 'adm.secretaria@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'adriana@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'antonio.comercial@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
@@ -5608,7 +5609,6 @@ User.create(username: 'leiloes1@centralleiloes.com.br', email: '', password: 'ag
 User.create(username: 'leiloes2@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'leiloes4@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'leiloes5@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
-User.create(username: 'lourenco@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'lucianafernandes@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'pedro@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)
 User.create(username: 'ricardo@centralleiloes.com.br', email: '', password: 'agendacentral123', password_confirmation: 'agendacentral123', :admin => 0)

@@ -44,7 +44,11 @@
     border-left-style: solid;
     border-left-width: 1px;
   }
-
+  
+  .bg-primary {
+    color: #fff;
+    background-color: #303F9F;
+  }
   .day {
     height: 150px;
   }
@@ -94,7 +98,7 @@
   }
 
   .has-events  p {
-    /*background-color: #f0ad4e;*/
+    background-color: #303F9F;
   }
 
 
