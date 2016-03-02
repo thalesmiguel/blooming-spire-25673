@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div id="loginBody" class="panel panel-default animated fadeInLeft" style="margin-top: 120px">
   <div class="panel-heading">
     <h4><%= t('.sign_in', :default => "Sign in") %></h4>
   </div>
@@ -12,15 +12,7 @@
         <%= f.label :senha %>
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
-      <%# if devise_mapping.rememberable? %>
-        <!-- <div class="checkbox"> -->
-          <!-- <label> -->
-            <%#= f.check_box :remember_me %>
-            <%#= f.label :remember_me %>
-          <!-- </label> -->
-        <!-- </div> -->
-        <%# end %>
-      <%= f.submit  t('.sign_in', :default => "Sign in"), class: "btn btn-primary" %>
+      <%= f.submit  t('.sign_in', :default => "Sign in"), class: "btn btn-primary", :onClick => "loginAnimate()" %>
     <% end %>
   </div>
 </div>

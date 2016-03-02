@@ -21,3 +21,7 @@
 //     document.body.appendChild(canvas);
 // });	
 
+function loginAnimate(){
+  document.getElementById('loginBody').setAttribute("class", "panel panel-default animated zoomOut");
+  document.getElementById('preBody').setAttribute("class", "panel panel-default animated zoomOut");
+};
