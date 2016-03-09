@@ -2,12 +2,18 @@ class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
 
 
+  def print
+    @holidays = Holiday.all
+    @meetings = Meeting.all.order(:start_time)
+  end
+
   # GET /meetings
   # GET /meetings.json
   def index
     @holidays = Holiday.all
     @meetings = Meeting.all.order(:start_time)
-    session[:start_date] = request.url 
+    session[:start_date] = request.url
+
     #@meetings.each do |meeting|
       # meeting.name.gsub!('LEILÃO VIRTUAL', '')
       # meeting.name.gsub!('LEILÃO', '')

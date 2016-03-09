@@ -50,7 +50,7 @@ li > .btn.btn-danger {
     font-weight: bold;
 }
 
-#btnSave{
+#btnModal{
     font-weight: bold;
 }
 
@@ -109,4 +109,22 @@ span:hover{
 } 
 #widget > div > table > tbody > tr > td.day.prev-month.has-events > p {
   background-color: #B6B6B6
+}
+
+.modal-header {
+  background-color: steelblue;
+  color: white;
+  font-weight: bold;
+}
+
+.modal-dialog.modal-lg {
+  width: 650px;
+}
+
+.modal-body {
+  padding-left: 34px;
+}
+
+.btn-year {
+  width: 96.5px;
 }

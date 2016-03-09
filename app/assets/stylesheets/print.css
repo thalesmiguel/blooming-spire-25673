@@ -8,6 +8,11 @@
     box-shadow: none !important;
   }
 
+  .simple-calendar {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
   div.simple-calendar .color-swatches {
 /*    background-color: #337ab7;
     color: #FFFFFF;
@@ -20,6 +25,8 @@
   }
 
   body {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 10px;
     line-height: 1.42857143;

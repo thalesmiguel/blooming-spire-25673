@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
@@ -21,7 +9,45 @@
 //     document.body.appendChild(canvas);
 // });	
 
+var monthsChecked = [];
+var yearChecked = [];
+
 function loginAnimate(){
   document.getElementById('loginBody').setAttribute("class", "panel panel-default animated zoomOut");
   document.getElementById('preBody').setAttribute("class", "panel panel-default animated zoomOut");
+};
+
+function closeError(){
+  $('#printAlert').hide();
+};
+
+function printCalendar(){
+  if (yearChecked != '' && monthsChecked != '') {
+    $('#printAlert').hide();
+    $('#btnCloseModal').click();
+    
+    window.open("meetings/print?yearChecked=" + yearChecked + "&monthsChecked=" + monthsChecked,'exam_dialog','toolbar=no,location=no,menubar=no,scrollbars=no,resizable=no');
+  $('.btn-year').removeClass('active');
+  $('.btn-month').removeClass('active');
+  } else {
+    $('#printAlert').show();
+  };
+};
+
+function cancelPrint(){
+  $('.btn-year').removeClass('active');
+  $('.btn-month').removeClass('active');
+};
+
+function checkMonths(value){
+  var index = monthsChecked.indexOf(value);
+  if (document.getElementById('month' + value).checked){
+    monthsChecked.push(value);  
+  } else{
+    monthsChecked.splice(index,1);
+  };
+};
+
+function checkYear(value){
+  yearChecked = value;
 };

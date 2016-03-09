@@ -7,7 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Agenda" %></title>
 
     <%= csrf_meta_tags %>
-
+    
     <%= stylesheet_link_tag "application", :media => "screen" %>
     <%= stylesheet_link_tag "print", :media => "print" %>
 
@@ -62,7 +62,10 @@
               <% end %>
               
               <% if current_page?(meetings_path) || current_page?(root_url) %>
-                <input type="button" id="btnSave" value="Imprimir" class="btn btn-danger" /> 
+                <!-- <input type="button" id="btnSave" value="Imprimir" class="btn btn-danger" />  -->
+
+                <button type="button" id="btnModal" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="closeError()">Imprimir</button>
+                
               <% end %>
             <% end %>
             
@@ -106,29 +109,10 @@
 
     </div> <!-- /container -->
 
+  <%= render :partial => "layouts/print" %>
+
   </body>
 </html>
-
-
-<script>
-
-  $(function () {
-    $("#btnSave").click(function () {
-     window.print();
-      // document.getElementById("SetaDir").style.visibility = "hidden"
-      // document.getElementById("SetaEsq").style.visibility = "hidden"
-      // html2canvas($("#widget"), {
-      //   onrendered: function (canvas) {
-      //     var img = canvas.toDataURL()
-      //     window.open(img);
-      //     document.getElementById("SetaDir").style.visibility = "visible"
-      //     document.getElementById("SetaEsq").style.visibility = "visible"
-      //   },
-      //   allowTaint: true
-      //  });
-      });
-    });
-</script>
 
 
 <script>

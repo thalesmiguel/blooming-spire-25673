@@ -1,13 +1,14 @@
+
 <div class="simple-calendar">
   
   <div>
-    
+
     <div class="calendarbuttons">
-      <%= link_to "<span class='btn glyphicon glyphicon-arrow-left' id='SetaEsq' </span>".html_safe , start_date: date_range.first - 1.day %>
+      <%= link_to "<span class='btn glyphicon glyphicon-arrow-left hidden-print' id='SetaEsq' </span>".html_safe , start_date: date_range.first - 1.day %>
       
       <b class="btn mes-ano"> <%= I18n.t("date.month_names")[start_date.month] %>/<%= start_date.year %> </b>
       
-      <%= link_to "<span class='btn glyphicon glyphicon-arrow-right' aria-hidden='true' id='SetaDir'></span> ".html_safe, start_date: date_range.last + 1.day  %>
+      <%= link_to "<span class='btn glyphicon glyphicon-arrow-right hidden-print' aria-hidden='true' id='SetaDir'></span> ".html_safe, start_date: date_range.last + 1.day  %>
     </div>
     
 

@@ -1,0 +1,83 @@
+<!-- Modal -->
+<div class="modal fade animated hidden-print " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Impressão</h4>
+      </div>
+      <div class="modal-body">
+      
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary btn-year  ">
+            <input type="radio" autocomplete="off" value="2016" id="year2016" onchange="checkYear(this.value)"> 2016
+          </label>
+          <label class="btn btn-primary btn-year">
+            <input type="radio" autocomplete="off" value="2017" id="year2017" onchange="checkYear(this.value)"> 2017
+          </label>
+          <label class="btn btn-primary btn-year">
+            <input type="radio" autocomplete="off" value="2018" id="year2018" onchange="checkYear(this.value)"> 2018
+          </label>
+          <label class="btn btn-primary btn-year">
+            <input type="radio" autocomplete="off" value="2019" id="year2019" onchange="checkYear(this.value)"> 2019
+          </label>
+          <label class="btn btn-primary btn-year">
+            <input type="radio" autocomplete="off" value="2020" id="year2020" onchange="checkYear(this.value)"> 2020
+          </label>
+          <label class="btn btn-primary btn-year">
+            <input type="radio" autocomplete="off" value="2021" id="year2021" onchange="checkYear(this.value)"> 2021
+          </label>
+        </div>
+
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="1" id="month1" onchange="checkMonths(this.value)"> Jan
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="2" id="month2" onchange="checkMonths(this.value)"> Fev
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="3" id="month3" onchange="checkMonths(this.value)"> Mar
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="4" id="month4" onchange="checkMonths(this.value)"> Abr
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="5" id="month5" onchange="checkMonths(this.value)"> Mai
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="6" id="month6" onchange="checkMonths(this.value)"> Jun
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="7" id="month7" onchange="checkMonths(this.value)"> Jul
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="8" id="month8" onchange="checkMonths(this.value)"> Ago
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="9" id="month9" onchange="checkMonths(this.value)"> Set
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="10" id="month10" onchange="checkMonths(this.value)"> Out
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="11" id="month11" onchange="checkMonths(this.value)"> Nov
+          </label>
+          <label class="btn btn-primary btn-month">
+            <input type="checkbox" autocomplete="off" value="12" id="month12" onchange="checkMonths(this.value)"> Dez
+          </label>
+        </div>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="btnCloseModal" data-dismiss="modal" onclick="cancelPrint()">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="btnModal" onclick="printCalendar()">Imprimir</button>
+      </div>
+
+      <div class="alert alert-danger animated fadeInDown" id="printAlert" style="display: none">
+        <center>Escolha um ano e, pelo menos, um mês para a impressão.</center>
+      </div>
+    
+    </div>
+  </div>
+</div>
