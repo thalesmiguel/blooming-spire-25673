@@ -11,4 +11,5 @@ pt-BR:
         descripton: "Descrição"
         channel: "Canal"
         place: "Local"
+        city_id: "Cidade"
         start_time: "Data/Hora"

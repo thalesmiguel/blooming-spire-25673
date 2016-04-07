@@ -50,6 +50,7 @@ class MeetingsController < ApplicationController
         format.html { redirect_to session[:start_date] }
         format.json { render :show, status: :created, location: @meeting }
       else
+        @new = 1
         format.html { render :new }
         format.json { render json: @meeting.errors, status: :unprocessable_entity }
       end

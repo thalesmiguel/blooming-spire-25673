@@ -2,6 +2,20 @@
   <div class="panel-heading">
     <h4><%= t('.sign_in', :default => "Sign in") %></h4>
   </div>
+  
+  <div>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %> animated fadeIn" style="-webkit-animation-delay: 1s;">
+        <a href="#" data-dismiss="alert" class="close">×</a>
+          <ul>
+            <li>
+              <%= value %>
+            </li>
+          </ul>
+      </div>
+    <% end %>  
+  </div>
+  
   <div class="panel-body">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
       <div class="form-group">

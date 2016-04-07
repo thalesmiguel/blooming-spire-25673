@@ -2,12 +2,10 @@
 
 one:
   name: MyString
-  descripton: MyString
-  text: MyString
+  description: MyString
   start_time: 2016-01-18 09:44:49
 
 two:
   name: MyString
-  descripton: MyString
-  text: MyString
+  description: MyString
   start_time: 2016-01-18 09:44:49
