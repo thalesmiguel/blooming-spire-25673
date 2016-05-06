@@ -32,6 +32,8 @@ function printCalendar(){
   } else {
     $('#printAlert').show();
   };
+  monthsChecked = [];
+  yearChecked = [];
 };
 
 function cancelPrint(){
