@@ -93,10 +93,11 @@ span:hover{
 
 .navbar {
     min-height: 35px;
+    border-radius: 0px;
 }
 
 #widget > div > table > tbody > tr > td > div > nav{
-  min-height: 0px; margin-bottom: 0px; margin-top: 0px; padding-top: 10px;
+  min-height: 0px; margin-bottom: 0px; margin-top: 0px; padding-top: 5px; padding-bottom: 5px;
 }
 #widget > div > table > tbody > tr > td.day.next-month.has-events > div > nav {
   display: none;

@@ -266,7 +266,7 @@ span:hover{
     background-color: #337ab7;
     color: #FFFFFF;
     width: 100px;
-    height: 20px;
+    height: 15px;
     float: left;
     border-radius: 0px;
     font-weight: bold;
@@ -276,7 +276,7 @@ span:hover{
     background-color: #388E3C;
     color: #FFFFFF;
     width: 100px;
-    height: 20px;
+    height: 15px;
     float: left;
     border-radius: 0px;
     font-weight: bold;
@@ -286,7 +286,7 @@ span:hover{
     background-color: #795548;
     color: #FFFFFF;
     width: 100px;
-    height: 20px;
+    height: 15px;
     float: left;
     border-radius: 0px;
     font-weight: bold;
@@ -296,7 +296,7 @@ span:hover{
     background-color: #E91E63;
     color: #FFFFFF;
     width: 100px;
-    height: 20px;
+    height: 15px;
     float: left;
     border-radius: 0px;
     font-weight: bold;
@@ -306,7 +306,7 @@ span:hover{
     background-color: #FF9800;
     color: #FFFFFF;
     width: 100px;
-    height: 20px;
+    height: 15px;
     float: left;
     border-radius: 0px;
     font-weight: bold;
@@ -316,7 +316,7 @@ span:hover{
     background-color: #9E9E9E;
     color: #FFFFFF;
     width: 100px;
-    height: 20px;
+    height: 15px;
     float: left;
     border-radius: 0px;
     font-weight: bold;
@@ -326,7 +326,7 @@ span:hover{
   background-color: #9C27B0;
   color: #FFFFFF;
   width: 100px;
-  height: 20px;
+  height: 15px;
   float: left;
   border-radius: 0px;
   font-weight: bold;
@@ -335,16 +335,16 @@ span:hover{
 .simple-calendar .color-swatches .brand-Aprovado{
     background-color: #FFF;
     color: #000;
-    background: repeating-linear-gradient(-45deg,rgba(0,0,0,0),rgba(0,0,0,0) 10px,rgba(0,0,0,.3) 50px,rgba(0,0,0,.3) 20px);
+    background: repeating-linear-gradient(-45deg,rgba(0,0,0,0),rgba(0,0,0,0) 10px,rgba(0,0,0,.3) 50px,rgba(0,0,0,.3) 15px);
     width: 100px;
-    height: 20px;
+    height: 15px;
     float: left;
     border-radius: 0px;
     font-weight: bold;
     text-align: center;  
 }
   div .approved {
-    background: repeating-linear-gradient(-45deg,rgba(0,0,0,0),rgba(0,0,0,0) 10px,rgba(0,0,0,.3) 50px,rgba(0,0,0,.3) 20px);
+    background: repeating-linear-gradient(-45deg,rgba(0,0,0,0),rgba(0,0,0,0) 10px,rgba(0,0,0,.3) 50px,rgba(0,0,0,.3) 15px);
     width: 100%;
     height: 100%;
 }
@@ -383,7 +383,7 @@ span:hover{
 }
 
 #widget > div > table > tbody > tr > td > div > nav > div > ul{
-  text-align: center;padding-left: 0px; font-size: 12px;margin-bottom: 0px; margin-top: 0px;
+  text-align: center;padding-left: 0px; font-size: 10px;margin-bottom: 0px; margin-top: 0px;
 }
 #widget > div > table > tbody > tr > td.day.next-month.has-events > div > nav {
   display: none;
