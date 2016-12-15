@@ -57,8 +57,11 @@
             <% else %>
               <% if current_user.admin == 1 %>
 
-                <li> <%= link_to "<span class='glyphicon glyphicon-calendar' </span>".html_safe, meetings_path, :style => 'padding-bottom: 0px; padding-left: 0px; padding-top: 0px;' %> </li>
+                <li>
+                  <%= link_to "<span class='glyphicon glyphicon-calendar' </span>".html_safe, meetings_path, :style => 'padding-bottom: 0px; padding-left: 0px; padding-top: 0px;' %>
+                </li>
                 <%= link_to t('.new', :default => "Novo Leilão"), new_meeting_path, :class => 'btn btn-primary' %>
+                <%= link_to t('.new', :default => "Observações"), observations_path, :class => 'btn btn-info' %>
               <% end %>
 
               <% if current_page?(meetings_path) || current_page?(root_url) %>

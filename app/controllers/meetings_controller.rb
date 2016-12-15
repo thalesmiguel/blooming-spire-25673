@@ -5,6 +5,7 @@ class MeetingsController < ApplicationController
   def print
     @holidays = Holiday.all
     @meetings = Meeting.all.order(:start_time)
+    @observations = Observation.all
   end
 
   # GET /meetings

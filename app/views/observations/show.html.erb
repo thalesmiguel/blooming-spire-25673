@@ -1,0 +1,23 @@
+<%- model_class = Observation -%>
+<div class="page-header">
+  <h1>Observação</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @observation.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:year) %>:</strong></dt>
+  <dd><%= @observation.year %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:month) %>:</strong></dt>
+  <dd><%= @observation.month %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              observations_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_observation_path(@observation), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              observation_path(@observation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

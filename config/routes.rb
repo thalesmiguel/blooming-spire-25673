@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :observations
   root 'meetings#index'
 
   get 'meetings/print' => 'meetings#print'
