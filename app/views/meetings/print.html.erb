@@ -2,4 +2,17 @@
 
 <% params[:monthsChecked].split(',').sort_by(&:to_i).each do |month| %>
   <%= render :partial => 'month_calendar_print', :locals => {:print_year => params[:yearChecked], :print_month => month} %>
+
+  <% if params[:yearChecked] == '2017' && month == '5' %>
+    <p> Definir data Leilão Nelore do Golias. </p>
+  <% end %>
+
+  <% if params[:yearChecked] == '2017' && month == '6' %>
+    <p> Acertar c/ Florêncio datas para Fazenda Ouro Branco e Lilian Chateubriand </p>
+  <% end %>
+
+  <% if params[:yearChecked] == '2017' && month == '7' %>
+    <p> Ver uma alternativa para o Leilão Jorge Atalla </p>
+  <% end %>
+
 <% end %>

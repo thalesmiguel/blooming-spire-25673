@@ -7,12 +7,12 @@
       <!-- <p class="bg-primary"> <%= link_to meeting.name, meeting_path(meeting) %> </p> -->
 
       <nav class="navbar navbar-default <%= if meeting.approved == 1
-                                              'approved' 
-                                            end %>" 
+                                              'approved'
+                                            end %>"
         style='margin-bottom: 0px;margin-top: 0px; background-color: <%= meeting.color %>;'>
         <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
           <ul style="text-align: center;padding-left: 0px; font-size: 12px; margin-bottom: 0px;">
-            
+
             <% if current_user.admin == 0 %> <!-- Usuário comum -->
               <% if !meeting.city %> <!-- Feriado -->
                 <%= label_tag :nil, meeting.name, :style => "color: #{meeting.font};"%>
@@ -50,4 +50,5 @@
 
     </div>
   <% end %>
+
 <% end %>
