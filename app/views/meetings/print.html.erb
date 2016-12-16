@@ -5,7 +5,7 @@
 
   <% @observations.each do |observation| %>
     <% if observation.year.to_i == params[:yearChecked].to_i && observation.month.to_i == month.to_i %>
-      <p>
+      <p style="font-size: 14px;">
         <%= observation.description %>
       </p>
     <% end %>
