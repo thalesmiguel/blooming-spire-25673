@@ -22,31 +22,21 @@
     </div>
     <%=f.error_span(:name) %>
   </div>
-    <div class="form-group">
-    <%= f.label :color, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :color, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:color) %>
-  </div>
-    <div class="form-group">
-    <%= f.label :font, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :font, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:font) %>
-  </div>
+
+  <%= f.hidden_field :color, value: '#9C27B0' %>
+  <%= f.hidden_field :font, value: '#FFFFFF' %>
+
   <div class="form-group">
     <%= f.label :date, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.date_field :date, :class => 'form-control' %>
+      <%= f.date_field :date, :value => Time.now.strftime('%Y-%m-%d'), :class => 'form-control' %>
     </div>
     <%=f.error_span(:date) %>
   </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 holidays_path, :class => 'btn btn-default' %>
     </div>

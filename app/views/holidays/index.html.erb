@@ -1,16 +1,17 @@
 <%- model_class = Holiday -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%=t '.title', :default => 'Feriados' %></h1>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+  new_holiday_path,
+  :class => 'btn btn-primary' %>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:color) %></th>
-      <th><%= model_class.human_attribute_name(:font) %></th>
-      <th><%= model_class.human_attribute_name(:date) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th> Id </th>
+      <th> Nome </th>
+      <th> Data </th>
+      <th> Criado em </th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,8 +20,6 @@
       <tr>
         <td><%= link_to holiday.id, holiday_path(holiday) %></td>
         <td><%= holiday.name %></td>
-        <td><%= holiday.color %></td>
-        <td><%= holiday.font %></td>
         <td><%= holiday.date %></td>
         <td><%=l holiday.created_at %></td>
         <td>
@@ -36,7 +35,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_holiday_path,
-            :class => 'btn btn-primary' %>
